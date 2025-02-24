@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btngoToDelete" type="id" />
+    <item name="btngoToEdit" type="id" />
+    <item name="Imp_Ellos_Ellas_Ustedes" type="id" />
+    <item name="Ind_El_Ella_Usted" type="id" />
+    <item name="menuNuevo" type="id" />
+</resources>

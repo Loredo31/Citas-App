@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="110dp"
+    android:layout_marginRight="20dp">
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Verbo:"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/et_verb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presente Indicativo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginLeft="90dp"/>
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Yo:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Ind_Yo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tu:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Ind_Tu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="El/Ella/Usted:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Ind_El_Ella_Usted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nosotros:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Ind_Nosotros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vosotros:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Ind_Vosotros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ellos:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Ind_Ellos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presente Imperativo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginLeft="90dp"/>
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tu:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Imp_Tu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nosotros:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Imp_Nosotros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ellos/Ellas/Ustedes:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Imp_Ellos_Ellas_Ustedes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+    <Button
+        android:id="@+id/btngoToEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="Editar" />
+
+    <Button
+        android:id="@+id/btngoToDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:text="Eliminar" />
+
+
+</TableLayout>

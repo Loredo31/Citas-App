@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingresar Verbo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_marginTop="90dp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_verb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Verbo"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presente Indicativo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ind_Yo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Yo"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ind_Tu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tú"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ind_El"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Él/Ella/Usted"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ind_Nosotros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nosotros"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ind_Vosotros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vosotros"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ind_Ellos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ellos/Ellas/Ustedes"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Presente Imperativo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Imp_Tu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tú"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Imp_Nosotros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nosotros"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Imp_ellos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ellos/Ellas/Ustedes"
+            android:inputType="text"
+            android:textSize="13sp"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:text="Guardar" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

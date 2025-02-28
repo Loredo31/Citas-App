@@ -1,5 +1,6 @@
 package mx.edu.utng.verbos
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
@@ -9,46 +10,45 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import mx.edu.utng.verbos.db.DbVerbs
-import mx.edu.utng.verbos.entidades.Verbs
+import mx.edu.utng.verbos.db.DbCitas
+import mx.edu.utng.verbos.entidades.Citas
 
 //import com.udb.testjava.db.DbContactos
 ///import com.udb.testjava.entidades.Contactos
 
 class ShowActivity : AppCompatActivity() {
 
-    private lateinit var et_verb: TextView
-    private lateinit var Ind_Yo: TextView
-    private lateinit var Ind_Tu: TextView
-    private lateinit var Ind_El_Ella_Usted: TextView
-    private lateinit var Ind_Nosotros: TextView
-    private lateinit var Ind_Vosotros: TextView
-    private lateinit var Ind_Ellos: TextView
-    private lateinit var Imp_Tu: TextView
-    private lateinit var Imp_Nosotros: TextView
-    private lateinit var Imp_Ellos_Ellas_Ustedes: TextView
+    private lateinit var Consulta: TextView
+    private lateinit var Doctor: TextView
+    private lateinit var Paciente: TextView
+    private lateinit var Fecha: TextView
+    private lateinit var Hora_Inicio: TextView
+    private lateinit var Hora_Fin: TextView
+    private lateinit var Diagnostico: TextView
+    private lateinit var Receta: TextView
+    private lateinit var Pago: TextView
     private lateinit var btnEdit: Button
     private lateinit var btnDelete: Button
 
-    private lateinit var verb: Verbs
+    private lateinit var cita: Citas
     private var id = 0
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show)
 
-        et_verb = findViewById(R.id.et_verb)
+        Consulta = findViewById(R.id.Consulta)
         btnEdit = findViewById(R.id.btngoToEdit)
         btnDelete = findViewById(R.id.btngoToDelete)
-        Ind_Yo = findViewById(R.id.Ind_Yo)
-        Ind_Tu = findViewById(R.id.Ind_Tu)
-        Ind_El_Ella_Usted = findViewById(R.id.Ind_El_Ella_Usted)
-        Ind_Nosotros = findViewById(R.id.Ind_Nosotros)
-        Ind_Vosotros = findViewById(R.id.Ind_Vosotros)
-        Ind_Ellos = findViewById(R.id.Ind_Ellos)
-        Imp_Tu = findViewById(R.id.Imp_Tu)
-        Imp_Nosotros = findViewById(R.id.Imp_Nosotros)
-        Imp_Ellos_Ellas_Ustedes = findViewById(R.id.Imp_Ellos_Ellas_Ustedes)
+        Doctor = findViewById(R.id.Doctor)
+        Paciente = findViewById(R.id.Paciente)
+        Fecha = findViewById(R.id.Fecha)
+        Hora_Inicio = findViewById(R.id.Hora_Inicio)
+        Hora_Fin = findViewById(R.id.Hora_Fin)
+        Diagnostico = findViewById(R.id.Diagnostico)
+        Receta = findViewById(R.id.Receta)
+        Pago = findViewById(R.id.Pago)
 
         if (savedInstanceState == null) {
             val extras = intent.extras
@@ -61,20 +61,19 @@ class ShowActivity : AppCompatActivity() {
             id = savedInstanceState.getSerializable("ID") as Int
         }
 
-        val dbVerbs = DbVerbs(this)
-        verb = dbVerbs.showVerb(id)!!
+        val dbCitas = DbCitas(this)
+        cita = dbCitas.showVerb(id)!!
 
-        if (verb != null) {
-            et_verb.setText(verb.Verbo)
-            Ind_Yo.setText(verb.Ind_Yo)
-            Ind_Tu.setText(verb.Ind_Tu)
-            Ind_El_Ella_Usted.setText(verb.Ind_El_Ella_Usted)
-            Ind_Nosotros.setText(verb.Ind_Nosotros)
-            Ind_Vosotros.setText(verb.Ind_Vosotros)
-            Ind_Ellos.setText(verb.Ind_Ellos)
-            Imp_Tu.setText(verb.Imp_Tu)
-            Imp_Nosotros.setText(verb.Imp_Nosotros)
-            Imp_Ellos_Ellas_Ustedes.setText(verb.Imp_Ellos_Ellas_Ustedes)
+        if (cita != null) {
+            Consulta.setText(cita.Consulta)
+            Doctor.setText(cita.Doctor)
+            Paciente.setText(cita.Paciente)
+            Fecha.setText(cita.Fecha)
+            Hora_Inicio.setText(cita.Hora_Inicio)
+            Hora_Fin.setText(cita.Hora_Fin)
+            Diagnostico.setText(cita.Diagnostico)
+            Receta.setText(cita.Receta)
+            Pago.setText(cita.Pago)
             //btnSave.visibility = View.INVISIBLE
             /* et_verb.inputType = InputType.TYPE_NULL
              Ind_Yo.inputType = InputType.TYPE_NULL
@@ -94,9 +93,9 @@ class ShowActivity : AppCompatActivity() {
 
         btnDelete.setOnClickListener {
             val builder = AlertDialog.Builder(this@ShowActivity)
-            builder.setMessage("¿Desea eliminar este verbo?")
+            builder.setMessage("¿Desea eliminar esta cita?")
                 .setPositiveButton("SI") { dialog, which ->
-                    if (dbVerbs.deleteVerb(id)) {
+                    if (dbCitas.deleteCita(id)) {
                         goToHome();
                     }
                 }

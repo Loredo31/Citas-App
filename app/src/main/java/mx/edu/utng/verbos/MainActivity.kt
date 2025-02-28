@@ -11,32 +11,32 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.Toast
-import mx.edu.utng.verbos.adapters.ListVerbsAdapter
-import mx.edu.utng.verbos.db.DbVerbs
-import mx.edu.utng.verbos.entidades.Verbs
+import mx.edu.utng.verbos.adapters.ListCitasAdapter
+import mx.edu.utng.verbos.db.DbCitas
+import mx.edu.utng.verbos.entidades.Citas
 
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var txtBuscar: SearchView
-    private lateinit var listVerbs: RecyclerView
-    private lateinit var listArrayVerbs: ArrayList<Verbs>
-    private lateinit var adapter: ListVerbsAdapter
+    private lateinit var listCitas: RecyclerView
+    private lateinit var listArrayCitas: ArrayList<Citas>
+    private lateinit var adapter: ListCitasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //Video 3
         txtBuscar = findViewById(R.id.txtSearch)
-        listVerbs = findViewById(R.id.listVerbs)
-        listVerbs.layoutManager = LinearLayoutManager(this)
-        val dbVerbs = DbVerbs(this)
+        listCitas = findViewById(R.id.listCitas)
+        listCitas.layoutManager = LinearLayoutManager(this)
+        val dbCitas = DbCitas(this)
 
-        listArrayVerbs = ArrayList()
+        listArrayCitas = ArrayList()
 
-        adapter = ListVerbsAdapter(dbVerbs.showVerbs())
-        listVerbs.adapter = adapter
+        adapter = ListCitasAdapter(dbCitas.showCitas())
+        listCitas.adapter = adapter
 
         txtBuscar.setOnQueryTextListener(this)
 

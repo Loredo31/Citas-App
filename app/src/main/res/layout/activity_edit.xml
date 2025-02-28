@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ShowActivity">
 
     <FrameLayout
@@ -28,38 +29,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="658dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
                 android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:layout_marginTop="90dp"
                 android:textStyle="bold" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_verb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Verbo"
-                    android:inputType="text"
-                    android:textSize="13sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Presente Indicativo"
+                android:text="Información de la consulta"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
@@ -70,10 +56,26 @@
                 app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Ind_Yo"
+                    android:id="@+id/Consulta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Yo"
+                    android:hint="Consulta"
+                    android:inputType="text"
+                    android:textSize="13sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Doctor"
                     android:inputType="text"
                     android:textSize="13sp" />
 
@@ -85,10 +87,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Ind_Tu"
+                    android:id="@+id/Paciente"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tu"
+                    android:hint="Paciente"
                     android:inputType="text"
                     android:textSize="13sp" />
 
@@ -100,10 +102,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Ind_El"
+                    android:id="@+id/Fecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="él/ella/usted"
+                    android:hint="Fecha"
                     android:inputType="text"
                     android:textSize="13sp" />
 
@@ -115,10 +117,10 @@
                 app:boxBackgroundColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Ind_Nosotros"
+                    android:id="@+id/Hora_Inicio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nosotros"
+                    android:hint="Hora de inicio"
                     android:inputType="text"
                     android:textSize="13sp" />
 
@@ -127,13 +129,13 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white">
+                app:boxBackgroundColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Ind_Vosotros"
+                    android:id="@+id/Hora_Fin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Vosotros"
+                    android:hint="Hora de termino"
                     android:inputType="text"
                     android:textSize="13sp" />
 
@@ -142,36 +144,36 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white">
+                app:boxBackgroundColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Ind_Ellos"
+                    android:id="@+id/Diagnostico"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Ellos"
+                    android:hint="Diagnostico"
                     android:inputType="text"
                     android:textSize="13sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Presente Imperativo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp" />-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white">
+                app:boxBackgroundColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Imp_Tu"
+                    android:id="@+id/Receta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tu"
+                    android:hint="Receta"
                     android:inputType="text"
                     android:textSize="13sp" />
 
@@ -180,19 +182,19 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:boxBackgroundColor="@color/white">
+                app:boxBackgroundColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Imp_Nosotros"
+                    android:id="@+id/Pago"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nosotros"
+                    android:hint="Pago"
                     android:inputType="text"
                     android:textSize="13sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <!--<com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundColor="@color/white">
@@ -206,7 +208,7 @@
 
                     android:textSize="13sp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>-->
 
             <Button
                 android:id="@+id/btnSave"

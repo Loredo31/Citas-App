@@ -7,12 +7,12 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import mx.edu.utng.verbos.db.DbVerbs
+import mx.edu.utng.verbos.db.DbCitas
 
 
 class InsertActivity : AppCompatActivity() {
 
-    private lateinit var txtVerb: EditText
+    private lateinit var txtCitas: EditText
     private lateinit var text1: EditText
     private lateinit var text2: EditText
     private lateinit var text3: EditText
@@ -21,62 +21,60 @@ class InsertActivity : AppCompatActivity() {
     private lateinit var text6: EditText
     private lateinit var text7: EditText
     private lateinit var text8: EditText
-    private lateinit var text9: EditText
     private lateinit var btnSave: Button
 
 
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert)
 
 
-        txtVerb = findViewById(R.id.et_verb)
-        text1= findViewById(R.id.Ind_Yo)
-        text2= findViewById(R.id.Ind_Tu)
-        text3= findViewById(R.id.Ind_El)
-        text4= findViewById(R.id.Ind_Nosotros)
-        text5= findViewById(R.id.Ind_Vosotros)
-        text6= findViewById(R.id.Ind_Ellos)
-        text7= findViewById(R.id.Imp_Tu)
-        text8= findViewById(R.id.Imp_Nosotros)
-        text9= findViewById(R.id.Imp_ellos)
+        txtCitas = findViewById(R.id.Consulta)
+        text1= findViewById(R.id.Doctor)
+        text2= findViewById(R.id.Paciente)
+        text3= findViewById(R.id.Fecha)
+        text4= findViewById(R.id.Hora_Inicio)
+        text5= findViewById(R.id.Hora_Fin)
+        text6= findViewById(R.id.Diagnostico)
+        text7= findViewById(R.id.Receta)
+        text8= findViewById(R.id.Pago)
         btnSave = findViewById(R.id.btnSave)
 
         btnSave.setOnClickListener {
-            val verb = txtVerb.text.toString()
-            val indYo = text1.text.toString()
-            val indTu = text2.text.toString()
-            val indEl = text3.text.toString()
-            val indNosotros = text4.text.toString()
-            val indVosotros = text5.text.toString()
-            val indEllos = text6.text.toString()
-            val impTu = text7.text.toString()
-            val impNosotros = text8.text.toString()
-            val impEllos = text9.text.toString()
+            val Consulta = txtCitas.text.toString()
+            val Doctor = text1.text.toString()
+            val Paciente = text2.text.toString()
+            val Fecha = text3.text.toString()
+            val Hora_Inicio = text4.text.toString()
+            val Hora_Fin = text5.text.toString()
+            val Diagnostico = text6.text.toString()
+            val Receta = text7.text.toString()
+            val Pago = text8.text.toString()
 
-            if (isValidText(verb) && isValidText(indYo) && isValidText(indTu) && isValidText(indEl)
-                && isValidText(indNosotros) && isValidText(indVosotros) && isValidText(indEllos)
-                && isValidText(impTu) && isValidText(impNosotros) && isValidText(impEllos)
+            if (isValidText(Consulta) && isValidText(Doctor) && isValidText(Paciente) && isValidText(Fecha)
+                && isValidText(Hora_Inicio) && isValidText(Hora_Fin) && isValidText(Diagnostico)
+                && isValidText(Receta) && isValidText(Pago)
             ) {
-                val dbVerbs = DbVerbs(this@InsertActivity)
-                val id = dbVerbs.InsertV(
-                    verb,
-                    indYo,
-                    indTu,
-                    indEl,
-                    indNosotros,
-                    indVosotros,
-                    indEllos,
-                    impTu,
-                    impNosotros,
-                    impEllos
+                val dbCitas = DbCitas(this@InsertActivity)
+                val id = dbCitas.InsertC(
+                    Consulta,
+                    Doctor,
+                    Paciente,
+                    Fecha,
+                    Hora_Inicio,
+                    Hora_Fin,
+                    Diagnostico,
+                    Receta,
+                    Pago
                 )
 
                 if (id > 0) {
-                    Toast.makeText(this@InsertActivity, "REGISTRO GUARDADO", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@InsertActivity, "CONSULTA GUARDADA", Toast.LENGTH_LONG).show()
                     limpiar()
                 } else {
-                    Toast.makeText(this@InsertActivity, "ERROR AL GUARDAR REGISTRO", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@InsertActivity, "ERROR AL GUARDAR LA CONSULTA", Toast.LENGTH_LONG).show()
                 }
             } else {
                 Toast.makeText(this@InsertActivity, "Ingrese datos válidos en todos los campos", Toast.LENGTH_LONG).show()
@@ -86,7 +84,7 @@ class InsertActivity : AppCompatActivity() {
     }
 
     private fun limpiar() {
-        txtVerb.text.clear()
+        txtCitas.text.clear()
         text1.text.clear()
         text2.text.clear()
         text3.text.clear()
@@ -95,7 +93,6 @@ class InsertActivity : AppCompatActivity() {
         text6.text.clear()
         text7.text.clear()
         text8.text.clear()
-        text9.text.clear()
     }
     private fun isValidText(text: String): Boolean {
         val pattern = Regex("^[a-zA-ZáéíóúñÁÉÍÓÚÑ]+$")

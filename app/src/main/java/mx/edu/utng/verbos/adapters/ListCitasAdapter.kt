@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mx.edu.utng.verbos.R
 import mx.edu.utng.verbos.ShowActivity
-import mx.edu.utng.verbos.entidades.Verbs
+import mx.edu.utng.verbos.entidades.Citas
 //import com.udb.testjava.R
 //import com.udb.testjava.VerActivity
 //import com.udb.testjava.entidades.Contactos
@@ -17,19 +17,19 @@ import java.util.ArrayList
 import java.util.List
 import java.util.stream.Collectors
 
-class ListVerbsAdapter(private val listaVerbs: ArrayList<Verbs>) : RecyclerView.Adapter<ListVerbsAdapter.VerbsViewHolder>() {
+class ListCitasAdapter(private val listaCitas: ArrayList<Citas>) : RecyclerView.Adapter<ListCitasAdapter.CitasViewHolder>() {
 
     // VideoS
-    private val listaOriginal: ArrayList<Verbs> = ArrayList(listaVerbs)
+    private val listaOriginal: ArrayList<Citas> = ArrayList(listaCitas)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerbsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_verb, parent, false)
-        return VerbsViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CitasViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_cita, parent, false)
+        return CitasViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: VerbsViewHolder, position: Int) {
-        val verb = listaVerbs[position]
-        holder.viewVerbo.text = verb.Verbo
+    override fun onBindViewHolder(holder: CitasViewHolder, position: Int) {
+        val cita = listaCitas[position]
+        holder.viewCita.text = cita.Consulta
         /*       holder.viewInd_Yo.text = verb.Ind_Yo
                holder.viewInd_Tu.text = verb.Ind_Tu
                holder.viewInd_El_Ella_Usted.text = verb.Ind_El_Ella_Usted
@@ -44,26 +44,26 @@ class ListVerbsAdapter(private val listaVerbs: ArrayList<Verbs>) : RecyclerView.
     fun filtrado(txtBuscar: String) {
         val longitud = txtBuscar.length
         if (txtBuscar.length == 0) {
-            listaVerbs.clear()
-            listaVerbs.addAll(listaOriginal)
+            listaCitas.clear()
+            listaCitas.addAll(listaOriginal)
         } else {
-            val collection: MutableList<Verbs>? = listaVerbs.stream()
-                .filter { i -> i.Verbo!!.toLowerCase().contains(txtBuscar.toLowerCase()) }
+            val collection: MutableList<Citas>? = listaCitas.stream()
+                .filter { i -> i.Consulta!!.toLowerCase().contains(txtBuscar.toLowerCase()) }
                 .collect(Collectors.toList())
-            listaVerbs.clear()
+            listaCitas.clear()
             if (collection != null) {
-                listaVerbs.addAll(collection)
+                listaCitas.addAll(collection)
             }
         }
         notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
-        return listaVerbs.size
+        return listaCitas.size
     }
 
-    inner class VerbsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val viewVerbo: TextView = itemView.findViewById(R.id.viewVerbo)
+    inner class CitasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val viewCita: TextView = itemView.findViewById(R.id.viewCita)
         /* val viewInd_Yo: TextView = itemView.findViewById(R.id.viewInd_Yo)
          val viewInd_Tu: TextView = itemView.findViewById(R.id.viewInd_Tu)
          val viewInd_El_Ella_Usted: TextView = itemView.findViewById(R.id.viewInd_El_Ella_Usted)
@@ -78,11 +78,9 @@ class ListVerbsAdapter(private val listaVerbs: ArrayList<Verbs>) : RecyclerView.
             itemView.setOnClickListener {
                 val context: Context = itemView.context
                 val intent = Intent(context, ShowActivity::class.java)
-                intent.putExtra("ID", listaVerbs[adapterPosition].id)
+                intent.putExtra("ID", listaCitas[adapterPosition].id)
                 context.startActivity(intent)
             }
         }
-
-
     }
 }

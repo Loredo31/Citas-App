@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Imagen de fondo -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,19 +20,28 @@
     android:layout_marginTop="110dp"
     android:layout_marginRight="20dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalles de la consulta"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"/>
+
     <TableRow>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Verbo:"
-            android:textSize="24dp"
+            android:text="Consulta:"
+            android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
 
         <TextView
-            android:id="@+id/et_verb"
+            android:id="@+id/Consulta"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -31,28 +54,20 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Presente Indicativo"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginLeft="90dp"/>
 
-    </TableRow>
 
-    <TableRow>
+
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Yo:"
+            android:text="Doctor:"
             android:textColor="@color/black"
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/Ind_Yo"
+            android:id="@+id/Doctor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,12 +81,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tu:"
+            android:text="Paciente:"
             android:textColor="@color/black"
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/Ind_Tu"
+            android:id="@+id/Paciente"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -84,12 +99,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="El/Ella/Usted:"
+            android:text="Fecha:"
             android:textColor="@color/black"
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/Ind_El_Ella_Usted"
+            android:id="@+id/Fecha"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -102,82 +117,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nosotros:"
+            android:text="Hora de inicio:"
             android:textColor="@color/black"
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/Ind_Nosotros"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Vosotros:"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-
-        <TextView
-            android:id="@+id/Ind_Vosotros"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-    </TableRow>
-    <TableRow>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ellos:"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-
-        <TextView
-            android:id="@+id/Ind_Ellos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-    </TableRow>
-
-    <TableRow
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Presente Imperativo"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginLeft="90dp"/>
-
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Tu:"
-            android:textColor="@color/black"
-            android:textSize="18dp"/>
-
-        <TextView
-            android:id="@+id/Imp_Tu"
+            android:id="@+id/Hora_Inicio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -191,12 +136,50 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Nosotros:"
+            android:text="Hora de termino:"
             android:textColor="@color/black"
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/Imp_Nosotros"
+            android:id="@+id/Hora_Fin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Diagnostico:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Diagnostico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Receta:"
+            android:textColor="@color/black"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/Receta"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -210,12 +193,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ellos/Ellas/Ustedes:"
+            android:text="Pago:"
             android:textColor="@color/black"
             android:textSize="18dp"/>
 
         <TextView
-            android:id="@+id/Imp_Ellos_Ellas_Ustedes"
+            android:id="@+id/Pago"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -247,3 +230,4 @@
 
 
 </TableLayout>
+    </RelativeLayout>

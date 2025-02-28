@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Verbos"
+rootProject.name = "Citas"
 include(":app")
  

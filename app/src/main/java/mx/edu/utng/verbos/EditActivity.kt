@@ -8,40 +8,38 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import mx.edu.utng.verbos.db.DbVerbs
-import mx.edu.utng.verbos.entidades.Verbs
+import mx.edu.utng.verbos.db.DbCitas
+import mx.edu.utng.verbos.entidades.Citas
 
 class EditActivity : AppCompatActivity() {
 
-    private lateinit var et_verb: EditText
-    private lateinit var Ind_Yo: EditText
-    private lateinit var Ind_Tu: EditText
-    private lateinit var Ind_El_Ella_Usted: EditText
-    private lateinit var Ind_Nosotros: EditText
-    private lateinit var Ind_Vosotros: EditText
-    private lateinit var Ind_Ellos: EditText
-    private lateinit var Imp_Tu: EditText
-    private lateinit var Imp_Nosotros: EditText
-    private lateinit var Imp_Ellos_Ellas_Ustedes: EditText
+    private lateinit var Consulta: EditText
+    private lateinit var Doctor: EditText
+    private lateinit var Paciente: EditText
+    private lateinit var Fecha: EditText
+    private lateinit var Hora_Inicio: EditText
+    private lateinit var Hora_Fin: EditText
+    private lateinit var Diagnostico: EditText
+    private lateinit var Receta: EditText
+    private lateinit var Pago: EditText
     private lateinit var btnSave: Button
 
-    private lateinit var verb: Verbs
+    private lateinit var cita: Citas
     private var id = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
 
-        et_verb = findViewById(R.id.et_verb)
-        Ind_Yo = findViewById(R.id.Ind_Yo)
-        Ind_Tu = findViewById(R.id.Ind_Tu)
-        Ind_El_Ella_Usted = findViewById(R.id.Ind_El)
-        Ind_Nosotros = findViewById(R.id.Ind_Nosotros)
-        Ind_Vosotros = findViewById(R.id.Ind_Vosotros)
-        Ind_Ellos = findViewById(R.id.Ind_Ellos)
-        Imp_Tu = findViewById(R.id.Imp_Tu)
-        Imp_Nosotros = findViewById(R.id.Imp_Nosotros)
-        Imp_Ellos_Ellas_Ustedes = findViewById(R.id.Imp_ellos)
+        Consulta = findViewById(R.id.Consulta)
+        Doctor = findViewById(R.id.Doctor)
+        Paciente = findViewById(R.id.Paciente)
+        Fecha = findViewById(R.id.Fecha)
+        Hora_Inicio = findViewById(R.id.Hora_Inicio)
+        Hora_Fin = findViewById(R.id.Hora_Fin)
+        Diagnostico = findViewById(R.id.Diagnostico)
+        Receta = findViewById(R.id.Receta)
+        Pago = findViewById(R.id.Pago)
         btnSave = findViewById(R.id.btnSave)
 
         if (savedInstanceState == null) {
@@ -55,45 +53,41 @@ class EditActivity : AppCompatActivity() {
             id = savedInstanceState.getSerializable("ID") as Int
         }
 
-        val dbVerbs = DbVerbs(this)
-        verb = dbVerbs.showVerb(id)!!
+        val dbCitas = DbCitas(this)
+        cita = dbCitas.showVerb(id)!!
 
-        if (verb != null) {
-            et_verb.setText(verb.Verbo)
-            Ind_Yo.setText(verb.Ind_Yo)
-            Ind_Tu.setText(verb.Ind_Tu)
-            Ind_El_Ella_Usted.setText(verb.Ind_El_Ella_Usted)
-            Ind_Nosotros.setText(verb.Ind_Nosotros)
-            Ind_Vosotros.setText(verb.Ind_Vosotros)
-            Ind_Ellos.setText(verb.Ind_Ellos)
-            Imp_Tu.setText(verb.Imp_Tu)
-            Imp_Nosotros.setText(verb.Imp_Nosotros)
-            Imp_Ellos_Ellas_Ustedes.setText(verb.Imp_Ellos_Ellas_Ustedes)
+        if (cita != null) {
+            Consulta.setText(cita.Consulta)
+            Doctor.setText(cita.Doctor)
+            Paciente.setText(cita.Paciente)
+            Fecha.setText(cita.Fecha)
+            Hora_Inicio.setText(cita.Hora_Inicio)
+            Hora_Fin.setText(cita.Hora_Fin)
+            Diagnostico.setText(cita.Diagnostico)
+            Receta.setText(cita.Receta)
+            Pago.setText(cita.Pago)
         }
 
         btnSave.setOnClickListener {
-            val verbText = et_verb.text.toString()
-            val indYoText = Ind_Yo.text.toString()
-            val indTuText = Ind_Tu.text.toString()
-            val indElText = Ind_El_Ella_Usted.text.toString()
-            val indNosotrosText = Ind_Nosotros.text.toString()
-            val indVosotrosText = Ind_Vosotros.text.toString()
-            val indEllosText = Ind_Ellos.text.toString()
-            val impTuText = Imp_Tu.text.toString()
-            val impNosotrosText = Imp_Nosotros.text.toString()
-            val impEllosText = Imp_Ellos_Ellas_Ustedes.text.toString()
+            val consultaText = Consulta.text.toString()
+            val doctorText = Doctor.text.toString()
+            val pacienteText = Paciente.text.toString()
+            val fechaText = Fecha.text.toString()
+            val horaInicioText = Hora_Inicio.text.toString()
+            val horaFinText = Hora_Fin.text.toString()
+            val diagnosticoText = Diagnostico.text.toString()
+            val recetaText = Receta.text.toString()
+            val pagoText = Pago.text.toString()
 
-            if (isValidText(verbText) && isValidText(indYoText) && isValidText(indTuText) && isValidText(
-                    indElText
-                ) && isValidText(indNosotrosText) && isValidText(indVosotrosText) && isValidText(
-                    indEllosText
-                ) && isValidText(impTuText) && isValidText(impNosotrosText) && isValidText(
-                    impEllosText
-                )
+            if (isValidText(consultaText) && isValidText(doctorText) && isValidText(pacienteText) && isValidText(
+                    fechaText
+                ) && isValidText(horaInicioText) && isValidText(horaFinText) && isValidText(
+                    diagnosticoText
+                ) && isValidText(recetaText) && isValidText(pagoText)
             ) {
-                val correcto = dbVerbs.editVerb(
-                    id, verbText, indYoText, indTuText, indElText, indNosotrosText,
-                    indVosotrosText, indEllosText, impTuText, impNosotrosText, impEllosText
+                val correcto = dbCitas.editCita(
+                    id, consultaText, doctorText, pacienteText, fechaText, horaInicioText,
+                    horaFinText, diagnosticoText, recetaText, pagoText
                 )
 
                 if (correcto) {
